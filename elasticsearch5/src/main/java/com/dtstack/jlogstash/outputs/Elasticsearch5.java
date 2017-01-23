@@ -67,28 +67,28 @@ public class Elasticsearch5 extends BaseOutput {
     private static final Logger logger = LoggerFactory.getLogger(Elasticsearch5.class);
     
     @Required(required=true)
-    public static String index;
+    public String index;
     
-    public static String indexTimezone =null;
+    public String indexTimezone =null;
 
-    public static String documentId;
+    public String documentId;
     
-    public static String documentType = "logs";
+    public String documentType = "logs";
     
-    public static String cluster;
+    public String cluster;
     
     @Required(required=true)
-    public static List<String> hosts;
+    public List<String> hosts;
     
-    private static boolean sniff=true;
+    private boolean sniff=true;
     
-    private static int bulkActions = 20000; 
+    private int bulkActions = 20000;
     
-    private static int bulkSize = 15;
+    private int bulkSize = 15;
     
-    private static int  flushInterval = 5;//seconds
+    private int flushInterval = 5;//seconds
     
-    private static int	concurrentRequests = 1;
+    private int	concurrentRequests = 1;
         
     private BulkProcessor bulkProcessor;
     

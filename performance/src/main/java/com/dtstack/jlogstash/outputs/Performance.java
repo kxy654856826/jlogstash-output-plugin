@@ -59,20 +59,20 @@ public class Performance extends BaseOutput{
 	
 	private static Logger logger = LoggerFactory.getLogger(Performance.class);
 	
-	private static AtomicLong eventNumber = new AtomicLong(0);
+	private AtomicLong eventNumber = new AtomicLong(0);
 		
-	private static int interval = 30;//seconds
+	private int interval = 30;//seconds
 	
 	/**清理文件执行间隔时间*/
-	private static long monitorFileInterval = 10 * 60;//seconds
+	private long monitorFileInterval = 10 * 60;//seconds
 	
-	private static String timeZone = "UTC";
+	private String timeZone = "UTC";
 
 	@Required(required=true)
-	private static String path;
+	private String path;
 		
 	/**key:文件路径, value:保留天数*/
-	private static Map<String, String> monitorPath;
+	private Map<String, String> monitorPath;
 	
 	private Map<String, String> fileTimeFormatMap = Maps.newHashMap();
 	
@@ -80,9 +80,9 @@ public class Performance extends BaseOutput{
 	
 	private Map<String, String> pathDicMap = Maps.newHashMap();
 			 	
-	private static ExecutorService executor = Executors.newSingleThreadExecutor();
+	private ExecutorService executor = Executors.newSingleThreadExecutor();
 	
-	private static ScheduledExecutorService scheduleExecutor = Executors.newScheduledThreadPool(1);
+	private ScheduledExecutorService scheduleExecutor = Executors.newScheduledThreadPool(1);
 	
 	public Performance(Map<String,Object> config){
 		super(config);

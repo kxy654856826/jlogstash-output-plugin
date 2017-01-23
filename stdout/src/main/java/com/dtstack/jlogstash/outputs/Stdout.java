@@ -31,18 +31,18 @@ import com.dtstack.jlogstash.outputs.BaseOutput;
  * Date: 2016年8月31日 下午1:36:42
  * Company: www.dtstack.com
  * @author sishu.yss
- * @param <E>
  *
  */
 @SuppressWarnings("serial")
-public class Stdout extends BaseOutput {	
+public class Stdout extends BaseOutput {
+
 	private static final Logger logger = LoggerFactory.getLogger(Stdout.class);
-	
-	private static String codec="line";
-	
+
 	private static ObjectMapper objectMapper = new ObjectMapper();
-	
-	private static String tempalte="\"%s\" => \"%s\","+System.getProperty("line.separator");
+
+	private static String tempalte="\"%s\" => \"%s\"," + System.getProperty("line.separator");
+
+	private String codec="line";
 
 	public Stdout(Map config) {
 		super(config);

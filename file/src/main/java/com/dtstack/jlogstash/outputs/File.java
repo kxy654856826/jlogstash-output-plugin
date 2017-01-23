@@ -51,11 +51,11 @@ public class File extends BaseOutput{
     private static Logger logger = LoggerFactory.getLogger(File.class);
 	
     @Required(required=true)
-	private static String path;
+	private String path;
 	
-	private static String codec="json_lines";
+	private String codec="json_lines";
 			
-	private static ObjectMapper objectMapper = new ObjectMapper();
+	private ObjectMapper objectMapper = new ObjectMapper();
 		
 	private List<String> codecol = Lists.newCopyOnWriteArrayList();
 	
@@ -67,9 +67,9 @@ public class File extends BaseOutput{
 	
 	private ExecutorService executor = Executors.newSingleThreadExecutor();
 	
-	private static int interval =5;//seconds
+	private int interval =5;//seconds
 	
-	private static String timeZone = "UTC";
+	private String timeZone = "UTC";
 
 	    
 	public File(Map config) {

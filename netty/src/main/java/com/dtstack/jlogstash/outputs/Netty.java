@@ -62,24 +62,24 @@ public class Netty extends BaseOutput{
 	private static final long serialVersionUID = 1L;
 
 	private static final Logger logger = LoggerFactory.getLogger(Netty.class);
-   
+
+	private static ObjectMapper objectMapper = new ObjectMapper();
+
+	private static String delimiter = System.getProperty("line.separator");
+
 	@Required(required=true)
-	private static int port;
+	private int port;
 	
 	@Required(required=true)
-	private static String host;
+	private String host;
 	
 	private NettyClient client;
-	
-	private static ObjectMapper objectMapper = new ObjectMapper();
-		
+
 	/**输出数据格式:替换的变量${var}*/
-	private static String format;
+	private String format;
 	
 	private Map<String, String> replaceStrMap = null;
-	
-	private static String delimiter = System.getProperty("line.separator");
-	
+
 	public Netty(Map config){
 		super(config);
 	}
